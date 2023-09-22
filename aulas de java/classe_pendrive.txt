@@ -1,9 +1,29 @@
 
+package exerciciopendrive;
+
+/**
+ *
+ * @author pedro
+ */
 import java.util.Scanner;
 public class PenDrive {
-    String marca;
+    String marca, unidade;
     int capacidade;
     double comprimento, largura, profundidade, peso, preco;
+    
+   
+   public void setUnidade(String un){
+       if(!un.isEmpty()){
+           unidade = un;
+       }
+   
+   } 
+   
+   public String getUnidade(){
+       return unidade;
+   }
+    
+    
     
     public void setMarca(String m){
         if(!m.isEmpty()){
@@ -74,10 +94,45 @@ public class PenDrive {
         return preco;
     }
     
+    //limpar conteúdo de cada atributo
+    public void setUnidade(){
+        unidade = "";
+    }
+    
+    public void setMarca(){
+        marca = "";
+    }
+    
+    public void setCapacidade(){
+        capacidade = 0;
+    }
+    
+    public void setComprimento(){
+        comprimento = 0;
+    }
+    
+    public void setLargura(){
+        largura = 0;
+    
+    }
+    
+    public void setProfundidade(){
+         profundidade = 0;
+    }
+    
+    public void setPeso(){
+        peso = 0;
+    }
+    
+    public void setPreco(){
+        preco = 0;
+    
+    }
+    
     //realiza atribuição de todos os atributos
     public void cadastrar(String marca, int capacidade, 
             double comprimento, double largura, double profundidade, 
-            double peso, double preco){
+            double peso, double preco, String unidade){
         
         setMarca(marca);
         setCapacidade(capacidade);
@@ -86,9 +141,11 @@ public class PenDrive {
         setProfundidade(profundidade);
         setPeso(peso);
         setPreco(preco);
+        setUnidade(unidade);
     
     }
     
+    //mostra os valores na tela
     public void imprimir(){
         System.out.println("Marca: " + getMarca());
         System.out.println("Capacidade: " + getCapacidade());
@@ -96,12 +153,13 @@ public class PenDrive {
         System.out.println("Largura: "+ getLargura());
         System.out.println("Profundidade: " + getProfundidade());
         System.out.println("Peso: " + getPeso());
-        System.out.println("Preco: " + getPreco());
+        System.out.println("Preco:  " + getPreco());
         
     
     
     }
     
+    //recebe os valores que o usuario digita
     public void entradaDados(){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Nome da Marca: ");
@@ -119,6 +177,19 @@ public class PenDrive {
         System.out.println("Valor do Preco ");
         setPreco(Double.parseDouble(entrada.nextLine()));
         
+        
+    }
+    
+    //limpa os dados digitados pelo usuário
+    public void limparDados(){
+        setMarca();
+        setCapacidade();
+        setComprimento();
+        setLargura();
+        setProfundidade();
+        setPeso();
+        setPreco();
+        setUnidade();
         
     }
    

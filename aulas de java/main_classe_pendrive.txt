@@ -1,0 +1,24 @@
+package exerciciopendrive;
+
+/**
+ *
+ * @author pedro
+ */
+
+
+public class ExercicioPendrive {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        PenDrive pd1 = new PenDrive();
+        pd1.entradaDados();
+        pd1.imprimir();
+        
+    }
+    
+}
